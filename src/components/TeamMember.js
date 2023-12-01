@@ -5,8 +5,9 @@ class TeamMember extends Component{
 
     render(){
         return(
+            <div className='container-center '>
             <div className="col-md-4 col-sm-6">
-                <div className="card" style={{borderColor: this.props.website ? '' : 'red'}}>
+                <div className="card">
                     <div className="card-header">
                         <img style={{maxWidth: '100%'}} src={this.props.img} alt={this.props.name} />
                     </div>
@@ -18,6 +19,7 @@ class TeamMember extends Component{
                         <div>{this.props.website}</div>
                     </div>
                 </div>
+            </div>
             </div>
            )
     }

@@ -20,3 +20,9 @@ input[type='checkbox']{
     left: 50%;
     transform: translateX(-50%);
 }
+
+.container-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
