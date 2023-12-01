@@ -1,52 +1,13 @@
 import React, {Component} from 'react'
-import Page from './Page'
+import Header from './Header'
+import Team from './Team_click'
 
 class App extends Component{
-    constructor(){
-        super()
-        this.state = {
-            loading: false,
-            metaData: '',
-            pagesData: [],
-        }
-    }
-
-    componentDidMount(){
-        this.setState({loading: true})
-        try {
-            Promise.all([
-              fetch("https://www.kosmetik-landshut.de/wp-json").then(response => response.json()),
-              fetch("https://www.kosmetik-landshut.de/wp-json/wp/v2/pages").then(response => response.json()),
-            ])
-            .then((data) => {
-                this.setState({
-                    loading: false,
-                    metaData: data[0],
-                    pagesData: data[1]
-                })
-            })
-        }
-        catch(err) {
-            console.log(err);
-        };
-    }
-
     render(){
-        
-       const page =  this.state.pagesData.map((page) => {
-            return (
-                <div key={page.id} className="list-group">
-                 <Page pageTitle={page.title.rendered} pageLink={page.link} pageExcerpt={page.excerpt.rendered} />
-                </div>
-            )
-        })
-
-        const text = this.state.loading ? "Loading..." : page
-
         return(
             <div className="container">
-                <h1>{this.state.metaData.name}</h1>
-                {text}
+                <Header />
+                <Team />
             </div>
         )
     }
