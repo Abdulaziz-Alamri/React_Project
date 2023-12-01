@@ -4,7 +4,7 @@ class Header extends Component{
     render(){
         return(
             <div className="navbar bg-dark rounded text-white">
-                <h2>Our Team</h2>
+                <h2>Breaking Bad Characters</h2>
             </div>
         )
     }

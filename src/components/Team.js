@@ -24,6 +24,7 @@ class Team extends Component {
                 phone={member.phone}
                 email={member.email}
                 website={member.website}
+                voice ={member.voice}
             />);
         return members
     }
