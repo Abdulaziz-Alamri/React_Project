@@ -32,7 +32,7 @@ class Team extends Component {
     render() {
         return (
             <div className="row">
-                <button className="btn btn-primary btn-lg btn-block" onClick={this.clickEvent}>click me!</button>
+                <button className="btn btn-primary btn-lg btn-block fixed-button" position="absolute" onClick={this.clickEvent}>click me!</button>
                 {this.mapping(this.state.memberInfo)}
             </div>
         )
