@@ -11,25 +11,25 @@ class App extends Component{
         }
     }
 
-    componentDidMount() {
-        this.setState({ loading: true });
+    componentDidMount(){
+        this.setState({loading: true})
         try {
             Promise.all([
-                fetch("").then(response => response.json()),
-                fetch("").then(response => response.json()),
+              fetch("https://www.kosmetik-landshut.de/wp-json").then(response => response.json()),
+              fetch("https://www.kosmetik-landshut.de/wp-json/wp/v2/pages").then(response => response.json()),
             ])
             .then((data) => {
                 this.setState({
                     loading: false,
                     metaData: data[0],
                     pagesData: data[1]
-                });
-            });
-        } catch (err) {
-            console.log(err);
+                })
+            })
         }
+        catch(err) {
+            console.log(err);
+        };
     }
-    
 
     render(){
         
@@ -53,4 +53,3 @@ class App extends Component{
 }
 
 export default App
-

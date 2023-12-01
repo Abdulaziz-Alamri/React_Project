@@ -2,7 +2,23 @@ import React,{Component} from 'react'
 import TeamMember from './TeamMember'
 import memberInfo from './memberInfo'
 
+function team(){
+ return(
+<div className='row'>
+    <TeamMember
+    info = {{
+        img: '/images/01.jpg',
+        name: 'Walter White',
+        position:'',
+        phone: '',
+        email: '',
+        website: '',
+    }}
+/>
+</div>
 
+ );     
+}
 class Team extends Component{
     constructor(){
         super()
@@ -38,5 +54,4 @@ class Team extends Component{
         )
     }
 }
-
 export default Team;
